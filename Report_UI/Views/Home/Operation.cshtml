@@ -1,0 +1,34 @@
+﻿@model Report_DO.OperationReport
+
+@{
+    ViewBag.Title = "Operation";
+    //DateTime dt = DateTime.Now;
+    //string date = string.Format("{0: dd MMM yyyy}", dt);
+
+}
+<h2>Operation Report</h2>
+
+@using (Html.BeginForm("Operation", "Home", FormMethod.Get))
+{
+    <p>
+        
+    </p>
+    <p>
+        Start Date: @Html.TextBoxFor(m => m.StartDate,"{0:dd-MM-yyyy}", new { @class = "from-control datepicker" })    
+        End Date: @Html.TextBoxFor(m => m.EndDate, "{0:dd-MM-yyyy}", new { @class = "from-control datepicker" })        
+        <input type="submit" value="Go" />
+    </p>
+}
+
+
+
+<table>
+    <tr>
+        <th>
+            Start Date: @Html.TextBoxFor(m => m.StartDate, "{0:dd-MM-yyyy}", new { @class = "from-control datepicker" })
+            End Date: @Html.TextBoxFor(m => m.EndDate, "{0:dd-MM-yyyy}", new { @class = "from-control datepicker" })
+            
+        </th>
+    </tr>
+</table>
+ 
