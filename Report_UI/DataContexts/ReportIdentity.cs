@@ -26,6 +26,8 @@ namespace Report_UI.DataContexts
         public DbSet<TBReportGroup> TBReportGroup { get; set; }
         public DbSet<TrafficInOutBound> tbTrafficInOutbound_BSC_Detail { get; set; }
 
+        public System.Data.Entity.DbSet<Report_DO.OperationReport> OperationReports { get; set; }
+
         
         
         

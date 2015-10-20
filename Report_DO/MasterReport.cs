@@ -76,25 +76,6 @@ namespace Report_DO
         public IEnumerable<MasterReport> MasterReports {get;set;}
         public IEnumerable<TrafficInOutBound> TrafficInOutbounds { get; set; }
         public IEnumerable<KPICal> KPICals { get; set; }
-    }
-
-    public class OperationReport
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString =
-           "{0:yyyy-MM-dd}",
-            ApplyFormatInEditMode = true)]
-        public DateTime? StartDate { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString =
-           "{0:yyyy-MM-dd}",
-            ApplyFormatInEditMode = true)]
-        public DateTime? EndDate { get; set; }
-       
-    }
+    }    
    
 }

@@ -1,23 +1,19 @@
-﻿@model Report_DO.OperationReport
+﻿@model IEnumerable<Report_DO.OperationReport>
 
 @{
-    ViewBag.Title = "Operation";
-    DateTime dt = DateTime.Now;
-    string date = string.Format("{0: dd MMM yyyy}", dt);
-
- 
-
-
+    ViewBag.Title = "Index";
+    
 }
+
 <h2>Operation Report</h2>
 
 @using (Html.BeginForm("Operation", "Home", FormMethod.Get))
 {
-    <p>
-        @Html.EditorFor(m => m.StartDate)   
-        @Html.EditorFor(m => m.EndDate) 
-        <input type="submit" value="Go" />
-    </p>
+
+    <input id="stDate" type="text" />
+    <input id="endDate" type="text" />
+    <input type="submit" value="Go" />
+    
 }
 
 
@@ -25,12 +21,12 @@
     <thead>
         <tr>
             <th>KPIName</th>
-            <th>@dt</th>
-               
+            <th>ResultTime</th>
+
         </tr>
     </thead>
-    <tbody> 
-        
+    <tbody>
+
         <tr>
             <td>
                 @Html.DisplayNameFor(model => model.CSSR)
@@ -163,7 +159,7 @@
         </tr>
     </tbody>
 
-    @*@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StartDate)
@@ -252,6 +248,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MWLinkUAS)
             </td>
-        </tr>*@
-
+        </tr>
+    }
 </table>

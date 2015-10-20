@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnectivity.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="MasterReport.cs" />
+    <Compile Include="OperationReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

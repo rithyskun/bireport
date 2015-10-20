@@ -22,7 +22,7 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
         public ActionResult Operation()
         {
-            //DateTime StartDate, DateTime EndDate
+            
             return View();          
         }
 
