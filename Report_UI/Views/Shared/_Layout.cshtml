@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - BI</title>
+    <title>@ViewBag.Title - BIReport</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/jqueryui")
     @Scripts.Render("~/bundles/modernizr")    
     
 </head>
-    <body>
-        <div class="container">
+    <body>        
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -44,7 +43,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        @Html.Partial("_LoginPartial")
+                        @Html.Partial("_LoginPartial")                        
                     </div>
                 </div>
             </div>
@@ -61,6 +60,7 @@
                     </div>
                 </footer>
             </div>
+       
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
             @Scripts.Render("~/bundles/jqueryui")
@@ -82,7 +82,6 @@
                 });
             </script>
             @RenderSection("scripts", required: false)
-        </div>
-</body>
+        </body>
 
 </html>

@@ -21,9 +21,9 @@ namespace Report_UI.Controllers
     {
         private ReportIdentity db = new ReportIdentity();
         public ActionResult Operation()
-        {
-            
-            return View();          
+        {           
+
+          return View();        
         }
 
         public ActionResult System()

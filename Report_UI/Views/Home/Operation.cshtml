@@ -1,12 +1,7 @@
-﻿@model Report_DO.OperationReport
+﻿
 
 @{
     ViewBag.Title = "Operation";
-    DateTime dt = DateTime.Now;
-    string date = string.Format("{0: dd MMM yyyy}", dt);
-
- 
-
 
 }
 <h2>Operation Report</h2>
@@ -14,29 +9,31 @@
 @using (Html.BeginForm("Operation", "Home", FormMethod.Get))
 {
     <p>
-        @Html.EditorFor(m => m.StartDate)   
-        @Html.EditorFor(m => m.EndDate) 
+        <input id="datepicker" type="text" />
+        <input id="datepicker" type="text" />
         <input type="submit" value="Go" />
     </p>
 }
-
-
 <table class="table">
     <thead>
-        <tr>
+        <tr>           
             <th>KPIName</th>
-            <th>@dt</th>
-               
+            <th>@DateTime.Now</th>
+           
         </tr>
     </thead>
-    <tbody> 
-        
+    <tbody>
         <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CSSR)
+            <td>               
+                @Html.Label("CSSR")
             </td>
         </tr>
         <tr>
+            <td>               
+                @Html.Label("TCHCongestion")
+            </td>
+        </tr>
+        @*<tr>
             <td>
                 @Html.DisplayNameFor(model => model.TCHCongestion)
             </td>
@@ -160,17 +157,11 @@
             <td>
                 @Html.DisplayNameFor(model => model.MWLinkUAS)
             </td>
-        </tr>
+        </tr>*@
     </tbody>
 
     @*@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
+        <tr>            
             <td>
                 @Html.DisplayFor(modelItem => item.ResultTime)
             </td>
@@ -252,6 +243,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.MWLinkUAS)
             </td>
-        </tr>*@
-
+        </tr>
+    }*@
 </table>
