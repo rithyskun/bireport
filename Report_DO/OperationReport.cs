@@ -54,5 +54,6 @@ namespace Report_DO
         public string MWLinkSES { get; set; }
         public string MWLinkUAS { get; set; }
 
+        public IEnumerable<OperationReport> OperateRP { get; set; }
     }
 }

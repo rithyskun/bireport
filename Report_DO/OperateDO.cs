@@ -1,29 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using Report_DO;
-using Report_UI.DataContexts;
 using System.Data.SqlClient;
-
-namespace Report_UI.Controllers
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Report_DO;
+namespace Report_DO
 {
-        public class OperationReportController : DbConnectivity
+    public class OperateDO: DbConnectivity
     {
-
-        private ReportIdentity db = new ReportIdentity();
-
-        // GET: /OperationReport/
-        public ActionResult Index()
-        {
-
-            
-        }
-        
         public IEnumerable<OperationReport> OperateRP(DateTime stDate, DateTime endDate)
         {
             
@@ -54,14 +40,5 @@ namespace Report_UI.Controllers
             return dataList;
         }
     }
-
-    //protected override void Dispose(bool disposing)
-    //{
-    //    if (disposing)
-    //    {
-    //        db.Dispose();
-    //    }
-    //    base.Dispose(disposing);
-    //}
-}
+    }
 

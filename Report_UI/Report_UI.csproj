@@ -189,7 +189,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KPIController.cs" />
-    <Compile Include="Controllers\OperationReportController.cs" />
     <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\TrafficInOutController.cs" />
