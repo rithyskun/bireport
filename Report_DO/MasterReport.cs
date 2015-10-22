@@ -41,8 +41,11 @@ namespace Report_DO
     {
         [Key]
         public int PId { get; set; }
+        [Display(Name = "Master Report ID")]
         public int MasterReportId { get; set; }
+        [Display(Name = "Key Name")]
         public string PKeyName { get; set; }
+        [Display(Name = "Key Value")]
         public string PkeyValue { get; set; }
 
     }
@@ -70,6 +73,26 @@ namespace Report_DO
         public decimal Answer_Traffic_Outgoing { get; set; }
         public decimal Total_Traffic_BSC { get; set; }
        
+    }
+    [Table("TBReportSchemaMapping")]
+    public class ReportSchemaMapping
+    {  
+      [Key]  
+      public int ReportSchemaMappingID { get; set; }
+      public int ReportGroupID { get; set; }
+      public string SPName { get; set; }
+      public string FileIdentifier { get; set; }
+      public string RawTableName { get; set; }
+      public string FieldDelimiter { get; set; }
+      public string RowDelimiter { get; set; }
+      public string RawFilelocation { get; set; }
+      public string FTPSiteAddress { get; set; }
+      public string FTPSiteUsername { get; set; }
+      public string FTPSitePassword { get; set; }
+      public string FTPSiteDirectory { get; set; }
+      public string WorkDirectory { get; set; }
+      public string FTPSPName { get; set; }
+
     }
     public class ReportIndexData
     {

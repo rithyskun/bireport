@@ -1,0 +1,137 @@
+﻿@model Report_DO.ReportSchemaMapping
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ReportSchemaMapping</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReportGroupID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReportGroupID)
+                @Html.ValidationMessageFor(model => model.ReportGroupID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SPName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SPName)
+                @Html.ValidationMessageFor(model => model.SPName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FileIdentifier, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FileIdentifier)
+                @Html.ValidationMessageFor(model => model.FileIdentifier)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RawTableName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RawTableName)
+                @Html.ValidationMessageFor(model => model.RawTableName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FieldDelimiter, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FieldDelimiter)
+                @Html.ValidationMessageFor(model => model.FieldDelimiter)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RowDelimiter, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RowDelimiter)
+                @Html.ValidationMessageFor(model => model.RowDelimiter)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RawFilelocation, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RawFilelocation)
+                @Html.ValidationMessageFor(model => model.RawFilelocation)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FTPSiteAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FTPSiteAddress)
+                @Html.ValidationMessageFor(model => model.FTPSiteAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FTPSiteUsername, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FTPSiteUsername)
+                @Html.ValidationMessageFor(model => model.FTPSiteUsername)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FTPSitePassword, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FTPSitePassword)
+                @Html.ValidationMessageFor(model => model.FTPSitePassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FTPSiteDirectory, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FTPSiteDirectory)
+                @Html.ValidationMessageFor(model => model.FTPSiteDirectory)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WorkDirectory, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WorkDirectory)
+                @Html.ValidationMessageFor(model => model.WorkDirectory)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FTPSPName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FTPSPName)
+                @Html.ValidationMessageFor(model => model.FTPSPName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

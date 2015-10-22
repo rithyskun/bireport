@@ -1,0 +1,122 @@
+﻿@model Report_DO.ReportSchemaMapping
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReportSchemaMapping</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportGroupID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportGroupID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileIdentifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileIdentifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RawTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RawTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FieldDelimiter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FieldDelimiter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RowDelimiter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowDelimiter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RawFilelocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RawFilelocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSitePassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSitePassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteDirectory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteDirectory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDirectory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDirectory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSPName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSPName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReportSchemaMappingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

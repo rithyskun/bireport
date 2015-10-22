@@ -1,0 +1,128 @@
+﻿@model Report_DO.ReportSchemaMapping
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ReportSchemaMapping</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportGroupID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportGroupID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SPName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SPName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileIdentifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileIdentifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RawTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RawTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FieldDelimiter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FieldDelimiter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RowDelimiter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowDelimiter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RawFilelocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RawFilelocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSitePassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSitePassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSiteDirectory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSiteDirectory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDirectory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDirectory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FTPSPName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FTPSPName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

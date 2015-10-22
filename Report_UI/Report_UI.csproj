@@ -191,6 +191,7 @@
     <Compile Include="Controllers\KPIController.cs" />
     <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ReportSchemaController.cs" />
     <Compile Include="Controllers\TrafficInOutController.cs" />
     <Compile Include="DataContexts\ReportIdentity.cs" />
     <Compile Include="DataContexts\UserIdentity.cs" />
@@ -307,6 +308,11 @@
     <Content Include="Views\Home\Operation.cshtml" />
     <Content Include="Views\Home\System.cshtml" />
     <Content Include="Views\OperationReport\Index.cshtml" />
+    <Content Include="Views\ReportSchema\Create.cshtml" />
+    <Content Include="Views\ReportSchema\Delete.cshtml" />
+    <Content Include="Views\ReportSchema\Details.cshtml" />
+    <Content Include="Views\ReportSchema\Edit.cshtml" />
+    <Content Include="Views\ReportSchema\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

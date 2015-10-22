@@ -28,6 +28,8 @@ namespace Report_UI.DataContexts
 
         public System.Data.Entity.DbSet<Report_DO.OperationReport> OperationReports { get; set; }
 
+        public DbSet<ReportSchemaMapping> TBReportSchemaMapping { get; set; }
+
         
         
         

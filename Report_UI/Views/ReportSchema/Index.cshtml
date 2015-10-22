@@ -1,0 +1,129 @@
+﻿@model PagedList.IPagedList<Report_DO.ReportSchemaMapping>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "ReportSchema", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("Search_Data", ViewBag.FilterValue as string, new { @placeholder = "Raw Name" })
+        <input type="submit" value="Go" />
+    </p>
+
+}
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.ActionLink("GroupID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("SPName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("FileIde", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("RawTable", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("FileDel", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("RowDel", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("RawLocate", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("FTPAddr", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("FTPUser", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("FTPPwd", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("FTPDir", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("WorkDir", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>
+            @Html.ActionLink("FTPSPName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportGroupID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileIdentifier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RawTableName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FieldDelimiter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowDelimiter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RawFilelocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FTPSiteAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FTPSiteUsername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FTPSitePassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FTPSiteDirectory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDirectory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FTPSPName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReportSchemaMappingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReportSchemaMappingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReportSchemaMappingID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, Page_No => Url.Action("Index",
+new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
