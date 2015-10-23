@@ -189,6 +189,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KPIController.cs" />
+    <Compile Include="Controllers\MasterSubReportController.cs" />
     <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReportSchemaController.cs" />
@@ -313,6 +314,11 @@
     <Content Include="Views\ReportSchema\Details.cshtml" />
     <Content Include="Views\ReportSchema\Edit.cshtml" />
     <Content Include="Views\ReportSchema\Index.cshtml" />
+    <Content Include="Views\MasterSubReport\Create.cshtml" />
+    <Content Include="Views\MasterSubReport\Delete.cshtml" />
+    <Content Include="Views\MasterSubReport\Details.cshtml" />
+    <Content Include="Views\MasterSubReport\Edit.cshtml" />
+    <Content Include="Views\MasterSubReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

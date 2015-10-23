@@ -30,6 +30,8 @@ namespace Report_UI.DataContexts
 
         public DbSet<ReportSchemaMapping> TBReportSchemaMapping { get; set; }
 
+        public DbSet<SubReport> TBSubReport { get; set; }
+
         
         
         

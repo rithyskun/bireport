@@ -1,16 +1,22 @@
-﻿
+﻿@model Report_DO.dataList
 
 @{
     ViewBag.Title = "Operation";
-
+    DateTime dt = new DateTime();
+    dt = DateTime.Now;
+    string.Format("{0: dd MM yyyy}", dt);
+    
 }
 <h2>Operation Report</h2>
 
 @using (Html.BeginForm("Operation", "Home", FormMethod.Get))
 {
     <p>
-        <input id="datepicker" type="text" />
-        <input id="datepicker" type="text" />
+        @*FROM :<input id="datepicker" type="text" />        
+        TO :<input id="datepicker1" type="text" />*@
+
+        @Html.EditorFor(m => m.StartDate, new { @class = "form-control"})
+        @Html.EditorFor(m => m.EndDate, new { @class = "form-control" })
         <input type="submit" value="Go" />
     </p>
 }
@@ -18,22 +24,27 @@
     <thead>
         <tr>           
             <th>KPIName</th>
-            <th>@DateTime.Now</th>
-           
+            <th>@dt</th>
+            <th>@dt</th>
+            <th>@dt</th>
+            <th>@dt</th>
+                      
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>               
-                @Html.Label("CSSR")
+            <td>
+                @Html.DisplayNameFor(model => model.CSSR)                               
+                @*@Html.Label("CSSR")*@
             </td>
         </tr>
         <tr>
-            <td>               
-                @Html.Label("TCHCongestion")
+            <td>
+                @Html.DisplayNameFor(model => model.TCHCongestion)               
+                @*@Html.Label("TCHCongestion")*@
             </td>
         </tr>
-        @*<tr>
+        <tr>
             <td>
                 @Html.DisplayNameFor(model => model.TCHCongestion)
             </td>
@@ -157,7 +168,7 @@
             <td>
                 @Html.DisplayNameFor(model => model.MWLinkUAS)
             </td>
-        </tr>*@
+        </tr>
     </tbody>
 
     @*@foreach (var item in Model) {

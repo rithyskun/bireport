@@ -30,13 +30,9 @@
                                 selectedRow = "success";
                             }
                             <tr class="@selectedRow">
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MasterReportListName)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Select", "Index", new { MasterReportListID = item.MasterReportListID })
-
-                                </td>
+                                <td>                                    
+                                    <a href="#">@Html.DisplayFor(modelItem => item.MasterReportListName)</a>
+                                </td>                                
                             </tr>
                         }
                     </table>
@@ -88,9 +84,9 @@
         </div>
     </div>
 
-    @section scripts
+@section scripts
 {
-        @*<script type="text/javascript">
+        <script type="text/javascript">
             $('.tree-toggle').click(function () {
                 $(this).parent().children('ul.tree').toggle(200);
             });
@@ -98,6 +94,9 @@
                 $('.tree-toggle').parent().children('ul.tree').toggle(200);
             })
 
-        </script>*@
-    }
+        </script>
+    
+}
+
+
 

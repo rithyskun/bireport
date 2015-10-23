@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
@@ -7,6 +8,10 @@ namespace Report_DO
 {
    public class dataList: DbConnectivity
     {
+        [DataType(DataType.Date)]
+        public DateTime StartDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime EndDate { get; set; }
         public string ResultTime { get; set; }
         public string CSSR { get; set; }
         public string TCHCongestion { get; set; }

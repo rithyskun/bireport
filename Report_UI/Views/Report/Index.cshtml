@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Report_DO.MasterReport>
+﻿@model IEnumerable<Report_DO.ViewModel.ViewSubReport>
 
 @{
     ViewBag.Title = "Index";
@@ -30,6 +30,7 @@
                         @Html.DisplayFor(modelItem => item.MasterReportListName)
                     </td>
                     <td>
+                        @Html.ActionLink("Select", "Index", new { id = item.MasterReportListID }) |
                         @Html.ActionLink("Edit", "Edit", new { id = item.MasterReportListID }) |
                         @Html.ActionLink("Details", "Details", new { id = item.MasterReportListID }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.MasterReportListID })

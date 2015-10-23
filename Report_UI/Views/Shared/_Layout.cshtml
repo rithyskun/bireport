@@ -68,7 +68,22 @@
 
             <script>
                 $(function () {
-                    $(".datepicker").datepicker({
+                    $("#datepicker").datepicker({
+                        dateFormat: "yy-mm-dd",
+                        changeYear: true,
+                        showOn: "button",
+                        buttonImageOnly: true,
+                        buttonImage: "/Content/cal/calendar.gif",
+                    }).css("display", "inline-block")
+                        .next("button").button({
+                            icons: { primary: "ui-icon-calendar" },
+                            buttonText: "Select a date",
+                            text: false
+                        });
+                });
+
+                $(function () {
+                    $("#datepicker1").datepicker({
                         dateFormat: "yy-mm-dd",
                         changeYear: true,
                         showOn: "button",

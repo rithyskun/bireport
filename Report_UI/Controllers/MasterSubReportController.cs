@@ -11,118 +11,107 @@ using Report_UI.DataContexts;
 
 namespace Report_UI.Controllers
 {
-    [Authorize]
-    public class ReportController : Controller
+    public class MasterSubReportController : Controller
     {
         private ReportIdentity db = new ReportIdentity();
 
-        // GET: /Report/
-        public ActionResult Index(int? Id, int? ReportID)
+        // GET: /MasterSubReport/
+        public ActionResult Index()
         {
-            var ViewModel = new SubReport();
-            ViewModel.SubReportName = db.TBSubReport
-                
-                .Include(i=>i.SubReportName);
-                
-                
-
-
-               
-
-            return View(db.TBMasterReportList.ToList());
+            return View(db.TBSubReport.ToList());
         }
 
-        // GET: /Report/Details/5
+        // GET: /MasterSubReport/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MasterReport masterreport = db.TBMasterReportList.Find(id);
-            if (masterreport == null)
+            SubReport subreport = db.TBSubReport.Find(id);
+            if (subreport == null)
             {
                 return HttpNotFound();
             }
-            return View(masterreport);
+            return View(subreport);
         }
 
-        // GET: /Report/Create
+        // GET: /MasterSubReport/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: /Report/Create
+        // POST: /MasterSubReport/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="MasterReportListID,MasterReportListName")] MasterReport masterreport)
+        public ActionResult Create([Bind(Include="Id,MasterReportID,SubReportName")] SubReport subreport)
         {
             if (ModelState.IsValid)
             {
-                db.TBMasterReportList.Add(masterreport);
+                db.TBSubReport.Add(subreport);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(masterreport);
+            return View(subreport);
         }
 
-        // GET: /Report/Edit/5
+        // GET: /MasterSubReport/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MasterReport masterreport = db.TBMasterReportList.Find(id);
-            if (masterreport == null)
+            SubReport subreport = db.TBSubReport.Find(id);
+            if (subreport == null)
             {
                 return HttpNotFound();
             }
-            return View(masterreport);
+            return View(subreport);
         }
 
-        // POST: /Report/Edit/5
+        // POST: /MasterSubReport/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="MasterReportListID,MasterReportListName")] MasterReport masterreport)
+        public ActionResult Edit([Bind(Include="Id,MasterReportID,SubReportName")] SubReport subreport)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(masterreport).State = EntityState.Modified;
+                db.Entry(subreport).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(masterreport);
+            return View(subreport);
         }
 
-        // GET: /Report/Delete/5
+        // GET: /MasterSubReport/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MasterReport masterreport = db.TBMasterReportList.Find(id);
-            if (masterreport == null)
+            SubReport subreport = db.TBSubReport.Find(id);
+            if (subreport == null)
             {
                 return HttpNotFound();
             }
-            return View(masterreport);
+            return View(subreport);
         }
 
-        // POST: /Report/Delete/5
+        // POST: /MasterSubReport/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MasterReport masterreport = db.TBMasterReportList.Find(id);
-            db.TBMasterReportList.Remove(masterreport);
+            SubReport subreport = db.TBSubReport.Find(id);
+            db.TBSubReport.Remove(subreport);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -33,11 +33,7 @@ namespace Report_UI.Controllers
         }
         public ActionResult Index(string selectedRow)
         {
-            if (selectedRow!=null)
-            {
-                
-            }   
-            
+           
             return View(db.TBMasterReportList.ToList());
         }
 
