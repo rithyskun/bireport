@@ -14,26 +14,27 @@ namespace Report_UI.DataContexts
         public ReportIdentity()
             : base("PMSReports")
         {
-            Database.SetInitializer<ReportIdentity>(null);
-            Database.Log = sql => Debug.Write(sql);
+            //Database.SetInitializer<ReportIdentity>(null);
+            //Database.Log = sql => Debug.Write(sql);
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-        }
+        
         public DbSet<MasterReport> TBMasterReportList { get; set; }
         public DbSet<KPICal> TBKPICalculation { get; set; }
         public DbSet<ParamConfig> TBParameters { get; set; }
         public DbSet<TBReportGroup> TBReportGroup { get; set; }
         public DbSet<TrafficInOutBound> tbTrafficInOutbound_BSC_Detail { get; set; }
 
-        public System.Data.Entity.DbSet<Report_DO.OperationReport> OperationReports { get; set; }
+        public DbSet<OperationReport> OperationReports { get; set; }
 
         public DbSet<ReportSchemaMapping> TBReportSchemaMapping { get; set; }
 
         public DbSet<SubReport> TBSubReport { get; set; }
 
-        
-        
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+                          
+        }
         
     }
 }

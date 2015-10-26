@@ -16,11 +16,11 @@ namespace Report_DO
     public class MasterReport
     {
         [Key]
-        [Display(Name = "Report ID")]
+        [Display(Name = "Report ID")]        
         public int MasterReportListID { get; set; }
         [Display(Name = "Report Name")]
         public string MasterReportListName { get; set; }
-        public virtual SubReport SubReport { get; set; }
+       
         
     }
 
@@ -95,11 +95,6 @@ namespace Report_DO
       public string FTPSPName { get; set; }
 
     }
-    public class ReportIndexData
-    {
-        public IEnumerable<MasterReport> MasterReports {get;set;}
-        public IEnumerable<TrafficInOutBound> TrafficInOutbounds { get; set; }
-        public IEnumerable<KPICal> KPICals { get; set; }
-    }    
+   
    
 }

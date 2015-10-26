@@ -19,17 +19,8 @@ namespace Report_UI.Controllers
         // GET: /Report/
         public ActionResult Index ()
         {
-            //var ViewModel = new SubReport();
-            //ViewModel.MasterReports = db.TBMasterReportList
-            //    .Include(i => i.MasterReportListName)
-            //    .Include(i => i.MasterReportListID);
-                
-
-           
-
-
-            //return View();   
-
+            
+                       
             return View(db.TBMasterReportList.ToList());
         }
 

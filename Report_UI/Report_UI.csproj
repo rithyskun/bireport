@@ -71,6 +71,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -189,7 +191,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KPIController.cs" />
-    <Compile Include="Controllers\MasterSubReportController.cs" />
     <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReportSchemaController.cs" />
@@ -314,11 +315,6 @@
     <Content Include="Views\ReportSchema\Details.cshtml" />
     <Content Include="Views\ReportSchema\Edit.cshtml" />
     <Content Include="Views\ReportSchema\Index.cshtml" />
-    <Content Include="Views\MasterSubReport\Create.cshtml" />
-    <Content Include="Views\MasterSubReport\Delete.cshtml" />
-    <Content Include="Views\MasterSubReport\Details.cshtml" />
-    <Content Include="Views\MasterSubReport\Edit.cshtml" />
-    <Content Include="Views\MasterSubReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +330,9 @@
       <Project>{470c066a-281a-406b-b3d8-f4d3d5029dab}</Project>
       <Name>Report_DO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,9 +12,8 @@ namespace Report_DO
     public class SubReport
     {
         [Key]
-        public int Id { get; set; }
-        public virtual int MasterReportID { get; set; }
+        public int MasterReportID { get; set; }
         public string SubReportName { get; set; }       
-        public virtual MasterReport MasterReports { get; set; }
+        
     }
 }
