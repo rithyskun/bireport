@@ -17,17 +17,18 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /Report/
-        public ActionResult Index(int? Id, int? ReportID)
+        public ActionResult Index ()
         {
-            var ViewModel = new SubReport();
-            ViewModel.SubReportName = db.TBSubReport
-                
-                .Include(i=>i.SubReportName);
-                
+            //var ViewModel = new SubReport();
+            //ViewModel.MasterReports = db.TBMasterReportList
+            //    .Include(i => i.MasterReportListName)
+            //    .Include(i => i.MasterReportListID);
                 
 
+           
 
-               
+
+            //return View();   
 
             return View(db.TBMasterReportList.ToList());
         }

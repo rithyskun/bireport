@@ -20,6 +20,12 @@ namespace Report_UI.Controllers
     public class HomeController : Controller
     {
         private ReportIdentity db = new ReportIdentity();
+        public ActionResult Index()
+        {
+
+            return View(db.TBMasterReportList.ToList());
+        }
+
         public ActionResult Operation()
         {           
 
@@ -31,12 +37,7 @@ namespace Report_UI.Controllers
 
             return View();
         }
-        public ActionResult Index(string selectedRow)
-        {
-           
-            return View(db.TBMasterReportList.ToList());
-        }
-
+       
         public ActionResult Schedule()
         {
             ViewBag.Message = "Your application description page.";

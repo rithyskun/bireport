@@ -20,7 +20,6 @@ namespace Report_DO
         public int MasterReportListID { get; set; }
         [Display(Name = "Report Name")]
         public string MasterReportListName { get; set; }
-
         public virtual SubReport SubReport { get; set; }
         
     }

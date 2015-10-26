@@ -13,8 +13,8 @@ namespace Report_DO
     {
         [Key]
         public int Id { get; set; }
-        public int MasterReportID { get; set; }
-        public string SubReportName { get; set; }
-        public virtual ICollection<MasterReport> MasterReports { get; set; }
+        public virtual int MasterReportID { get; set; }
+        public string SubReportName { get; set; }       
+        public virtual MasterReport MasterReports { get; set; }
     }
 }
