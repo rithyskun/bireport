@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Report_DO.GCellList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Go back System", "System", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BSCNameID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GCellName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GCellValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BSCNameID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GCellName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GCellValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GCellID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GCellID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GCellID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,37 +1,6 @@
 ﻿
 @{
     ViewBag.Title = "Dashboard";
-    DateTime dt = DateTime.Now;
-    string date = string.Format("{0: dd MMM yyyy}", dt);
-
-}
+ }   
 
 <h2>Dashboard</h2>
-@model Report_DO.OperationReport
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>jQuery UI Datepicker - Icon trigger</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script>
-        $(function () {
-            $("#datepicker").datepicker({
-                showOn: "button",
-                buttonImage: "/Content/cal/calendar.gif",
-                buttonImageOnly: true,
-                buttonText: "Select date"
-            });
-        });
-    </script>
-</head>
-<body>
-    
-    <p>Date: <input type="text" id="datepicker"></p>
-
-
-</body>
-</html>

@@ -49,3 +49,40 @@ body {
   color: #333333;
   background-color: #ffffff;
 }
+
+/* info and errors */
+.selectedrow 
+{ 
+    background-color: #a4d4e6; 
+}
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+/*Tree View*/
+
+.nav-list{padding-right:15px;padding-left:15px;margin-bottom:0;}
+.nav-list-main{padding-left:0px;padding-right:0px;margin-bottom:0;}
+span.nav-toggle-icon{font-size:7px !important;top:-2px !important;color:#888 !important;}
+

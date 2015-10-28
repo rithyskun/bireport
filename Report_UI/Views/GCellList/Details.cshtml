@@ -1,0 +1,50 @@
+﻿@model Report_DO.GCellList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GCellList</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BSCNameID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BSCNameID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GCellName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GCellName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GCellValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GCellValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GCellID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

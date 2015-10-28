@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Report_DO.TXNLinkBudgetSD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Go back System", "System", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Hop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Config)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RSLValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Config)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSLValue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LinkBudgetID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LinkBudgetID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LinkBudgetID })
+        </td>
+    </tr>
+}
+
+</table>

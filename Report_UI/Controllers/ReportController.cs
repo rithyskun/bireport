@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
+using Report_DO.ViewModel;
 
 namespace Report_UI.Controllers
 {
@@ -17,10 +18,21 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /Report/
-        public ActionResult Index ()
+        public ActionResult Index (int? id)
         {
-            
-                       
+            //var ViewSub = new ViewSubReport();
+            //ViewSub.MasterReports = db.TBMasterReportList                
+            //    .Include(i => i.SubReports.Select(c => c.SubReportName))
+            //    .Include(i=>i.SubReports.Select(c=>c.MasterReportID));                
+
+            if (id != null)
+            {
+                ViewBag.MasterReportListID = id.Value;
+                //ViewSub.SubReports = ViewSub.MasterReports.Where(c => c.MasterReportListID == id.Value).Single().SubReports;
+
+            }
+
+           //return View(ViewSub);          
             return View(db.TBMasterReportList.ToList());
         }
 

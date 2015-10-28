@@ -1,64 +1,69 @@
 ﻿@model IEnumerable<Report_DO.MasterReport>
+@*@model Report_DO.ViewModel.ViewSubReport*@
+
 
 @{
     ViewBag.Title = "Index";
+    
 }
 
-    <div>
+<div>
         <h2>Manage Master Report</h2>
         <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <div class="row">
-            <div class="col-md-6">
-                <table class="table table-striped table-hover">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.MasterReportListID)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.MasterReportListName)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MasterReportListID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MasterReportListName)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Select", "Index", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Edit", "Edit", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.MasterReportListID })
-                            </td>
-                        </tr>
-                    }
-
-                </table>
-            </div>
-            <div class="col-md-6">
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.Label("Sub Report Name")
-                        </th>
-                        <th>
-                            @Html.Label("Action")
-                        </th>
-                        <th></th>
-                    </tr>
-
-                   
-
-                </table>
-            </div>
-
-        </div>
+            @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;&nbsp;&nbsp;
+            @Html.ActionLink("Go back System", "System", "Home")
+        </p>    
         
-    </div>
+            <div>
+                <table class="table">                    
+                <tr>
+                    <th>                        
+                        @Html.DisplayNameFor(item => item.MasterReportListID)
+                    </th>
+                    <th>
+                        
+                        @Html.DisplayNameFor(item => item.MasterReportListName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    string selectedRow = "";
+                    if (item.MasterReportListID == ViewBag.MasterReportListID)
+                    {
+                        selectedRow = "selectedrow";
+                    }
+                    <tr class="@selectedRow">
+                        <td>
+                           
+                            @Html.DisplayFor(modelItem => item.MasterReportListID)
+                        </td>
+                        <td>
+                            
+                            @Html.DisplayFor(modelItem => item.MasterReportListName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Select", "Index", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Edit", "Edit", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.MasterReportListID })
+                        </td>
+                    </tr>
+                 }                 
+         </table> 
+</div>
+</div>
+
+      
+                  
+                         
+   
+
+                               
+
+               
+
+
+
+       

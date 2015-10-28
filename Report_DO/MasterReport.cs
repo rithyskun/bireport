@@ -20,8 +20,8 @@ namespace Report_DO
         public int MasterReportListID { get; set; }
         [Display(Name = "Report Name")]
         public string MasterReportListName { get; set; }
-       
-        
+        public virtual ICollection<SubReport> SubReports { get; set; }
+         
     }
 
     [Table("TBKPICalculation")]
@@ -96,5 +96,113 @@ namespace Report_DO
 
     }
    
-   
+   [Table("TBBoardClass")]
+   public class BoradClass
+   {
+       [Key]
+       public int BoardClassId { get; set; }
+       public string BoardClass { get; set; }
+   }
+
+    [Table("TBBoardType")]
+    public class BoardType
+    {
+        [Key]
+        public int BoardTypeId { get; set; }
+        [Display(Name = "BSC Name ID")]
+        public int BSCNameID { get; set; }
+        [Display(Name = "Sub Rack No")]
+        public string SubRackNo { get; set; }
+        [Display(Name = "Slot No")]
+        public string SlotNo { get; set; }
+        [Display(Name = "Board Type")]
+        public string Boardtype { get; set; }
+        [Display(Name = "Logical Function Type")]
+        public string LogicalFunctionType { get; set; }
+    }
+
+    [Table("TBBSCName")]
+    public class BSCNames
+    {
+        [Key]
+        public int BSCNameID { get; set; }
+        public string BSCName { get; set; }
+    }
+
+    [Table("TBGCellList")]
+    public class GCellList
+    {
+        [Key]
+        public int GCellID { get; set; }
+        [Display(Name = "BSC ID")]
+        public int BSCNameID { get; set; }
+        [Display(Name = "GCell Name")]
+        public string GCellName { get; set; }
+        [Display(Name = "GCell Value")]
+        public string GCellValue { get; set; }        
+        public string Province { get; set; }
+    }
+
+    [Table("tbNSS_PSDatacom_BSC_GBLinkCapacityTransmission")]
+    public class DataComGBLinkCap
+    {
+        [Key]
+        public string BSCName { get; set; }
+        public decimal GBLinkCapacity { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString =
+           "{0:yyyy-MM-dd}",
+            ApplyFormatInEditMode = true)]
+        public DateTime BeginDate { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString =
+           "{0:yyyy-MM-dd}",
+            ApplyFormatInEditMode = true)]
+        public DateTime EndDate { get; set; }
+    }
+
+    [Table("TBTRC_GBInterface_GBValue")]
+    public class GBInterface
+    {
+        [Key]
+        public string BSCName { get; set; }
+        public decimal GBValue { get; set; }
+    }
+
+    [Table("TBTXNFMENgineerList")]
+    public class FMEngineers
+    {
+        [Key]
+        public int FMEngineerListID { get; set; }
+        public string SiteName { get; set; }
+        public string FMEngineer { get; set; }
+    }
+
+    [Table("tbTXNRSLSiteList")]
+    public class SiteList
+    {
+        [Key]
+        public int SiteID { get; set; }
+        public string SiteName { get; set; }
+    }
+
+    [Table("TBTXNLinkBudget")]
+    public class TXNLinkBudget
+    {
+        [Key]
+        public int LinkBudgetID { get; set; }
+        public string Hop { get; set; }        
+        public string Config { get; set; }
+        public string RSLValue { get; set; }
+    }
+    [Table("TBTXNLinkBudgetSD")]
+    public class TXNLinkBudgetSD
+    {
+        [Key]
+        public int LinkBudgetID { get; set; }
+        public string Hop { get; set; }
+        public string LinkName { get; set; }
+        public string Config { get; set; }
+        public string RSLValue { get; set; }
+    }
 }

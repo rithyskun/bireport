@@ -13,7 +13,7 @@ namespace Report_DO
     {
         [Key]
         public int MasterReportID { get; set; }
-        public string SubReportName { get; set; }       
-        
+        public string SubReportName { get; set; }
+        public virtual MasterReport MasterReports { get; set; }
     }
 }

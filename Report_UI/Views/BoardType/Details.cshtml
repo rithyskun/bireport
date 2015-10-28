@@ -1,0 +1,58 @@
+﻿@model Report_DO.BoardType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BoardType</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BSCNameID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BSCNameID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubRackNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubRackNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlotNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Boardtype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Boardtype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalFunctionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogicalFunctionType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BoardTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Report_DO.DataComGBLinkCap>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Go back System", "System", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GBLinkCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GBLinkCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BSCName }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BSCName }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BSCName })
+        </td>
+    </tr>
+}
+
+</table>

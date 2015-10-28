@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Report_DO.SiteList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Go back System", "System", "Home")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SiteID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SiteID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SiteID })
+        </td>
+    </tr>
+}
+
+</table>
