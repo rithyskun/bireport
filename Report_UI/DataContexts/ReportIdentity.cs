@@ -36,6 +36,7 @@ namespace Report_UI.DataContexts
         public DbSet<SiteList> tbTXNRSLSiteList { get; set; }
         public DbSet<TXNLinkBudget> TBTXNLinkBudget { get; set; }
         public DbSet<TXNLinkBudgetSD> TBTXNLinkBudgetSD { get; set; }
+        public DbSet<MasterReportDate> tbMasterReportDate { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
+using PagedList;
 
 namespace Report_UI.Controllers
 {
@@ -16,9 +17,41 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /SiteList/
-        public ActionResult Index()
+        public ActionResult Index(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
         {
-            return View(db.tbTXNRSLSiteList.ToList());
+            ViewBag.CurrentSortOrder = Sorting_Order;
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "SiteID" : "";
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "SiteName" : "";
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+            ViewBag.FilterValue = Search_Data;
+
+            var sitelist = from slist in db.tbTXNRSLSiteList select slist;
+            if (!String.IsNullOrEmpty(Search_Data))
+            {
+                sitelist = sitelist.Where(slist => slist.SiteName.ToUpper().Contains(Search_Data.ToUpper()));
+                    
+            }
+
+            switch (Sorting_Order)
+            {
+                case "SiteName":
+                    sitelist = sitelist.OrderByDescending(slist => slist.SiteName);
+                    break;                
+                default:
+                    sitelist = sitelist.OrderBy(slist => slist.SiteID);
+                    break;
+            }
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(sitelist.ToPagedList(No_Of_Page, Size_Of_Page));
+            //return View(db.tbTXNRSLSiteList.ToList());
         }
 
         // GET: /SiteList/Details/5

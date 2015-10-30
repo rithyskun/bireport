@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Report_DO.TXNLinkBudget>
+﻿@*@model IEnumerable<Report_DO.TXNLinkBudget>*@
+@model PagedList.IPagedList<Report_DO.TXNLinkBudget>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -10,37 +12,48 @@
     @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System", "System", "Home")
 </p>
-<table class="table">
+@using (Html.BeginForm("Index", "LinkBudget", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("Search_Data", ViewBag.FilterValue as string, new { @placeholder = "Hop Name" })
+        <input type="submit" value="Go" />
+    </p>
+}
+<table class="table table-striped table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Hop)
+            @Html.ActionLink("HopName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Config)
+            @Html.ActionLink("Config", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RSLValue)
+            @Html.ActionLink("RSLValue", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })            
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hop)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Config)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RSLValue)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LinkBudgetID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LinkBudgetID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LinkBudgetID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Config)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RSLValue)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.LinkBudgetID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LinkBudgetID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LinkBudgetID })
+            </td>
+        </tr>
+    }
 
 </table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, Page_No => Url.Action("Index",
+new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))

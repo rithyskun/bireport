@@ -1,5 +1,7 @@
-﻿@model IEnumerable<Report_DO.SiteList>
+﻿@*@model IEnumerable<Report_DO.SiteList>*@
 
+@model PagedList.IPagedList<Report_DO.SiteList>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
 }
@@ -10,31 +12,42 @@
     @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System", "System", "Home")
 </p>
-<table class="table">
+@using (Html.BeginForm("Index", "SiteList", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("Search_Data", ViewBag.FilterValue as string, new { @placeholder = "SiteName" })
+        <input type="submit" value="Go" />
+    </p>
+}
+<table class="table table-striped table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SiteID)
+            @Html.ActionLink("SiteID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })           
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SiteName)
+            @Html.ActionLink("SiteName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })            
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SiteID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SiteName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SiteID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SiteID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SiteID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SiteID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SiteID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SiteID })
+            </td>
+        </tr>
+    }
 
 </table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, Page_No => Url.Action("Index",
+new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))

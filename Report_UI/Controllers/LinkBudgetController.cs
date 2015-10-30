@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
+using PagedList;
 
 namespace Report_UI.Controllers
 {
@@ -16,9 +17,41 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /LinkBudget/
-        public ActionResult Index()
+        public ActionResult Index(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
         {
-            return View(db.TBTXNLinkBudget.ToList());
+            ViewBag.CurrentSortOrder = Sorting_Order;
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Hop" : "";
+            
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+            ViewBag.FilterValue = Search_Data;
+
+            var linkbudget = from linkb in db.TBTXNLinkBudget select linkb;
+            if (!String.IsNullOrEmpty(Search_Data))
+            {
+                linkbudget = linkbudget.Where(linkb => linkb.Hop.ToUpper().Contains(Search_Data.ToUpper()));
+
+            }
+
+            switch (Sorting_Order)
+            {
+                case "Hop":
+                    linkbudget = linkbudget.OrderByDescending(linkb => linkb.Hop);
+                    break;
+                default:
+                    linkbudget = linkbudget.OrderBy(linkb => linkb.LinkBudgetID);
+                    break;
+            }
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(linkbudget.ToPagedList(No_Of_Page, Size_Of_Page));
+            //return View(db.TBTXNLinkBudget.ToList());
         }
 
         // GET: /LinkBudget/Details/5

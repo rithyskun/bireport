@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
+using PagedList;
 
 namespace Report_UI.Controllers
 {
@@ -16,9 +17,44 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /BoardType/
-        public ActionResult Index()
+        public ActionResult Index(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
         {
-            return View(db.TBBoardType.ToList());
+            ViewBag.CurrentSortOrder = Sorting_Order;
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "BoardType" : "";
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "LogicalFunctionType" : "";
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+            ViewBag.FilterValue = Search_Data;
+
+            var boardtype = from btype in db.TBBoardType select btype;
+            if (!String.IsNullOrEmpty(Search_Data))
+            {
+                boardtype = boardtype.Where(btype => btype.Boardtype.ToUpper().Contains(Search_Data.ToUpper())
+                    || btype.LogicalFunctionType.ToUpper().Contains(Search_Data.ToUpper()));
+            }
+
+            switch (Sorting_Order)
+            {
+                case "BoardType":
+                    boardtype = boardtype.OrderByDescending(btype => btype.BoardTypeId);
+                    break;
+                case "LogicalFunctionType":
+                    boardtype = boardtype.OrderByDescending(btype => btype.LogicalFunctionType);
+                    break;
+                default:
+                    boardtype = boardtype.OrderBy(btype => btype.BoardTypeId);
+                    break;
+            }
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(boardtype.ToPagedList(No_Of_Page, Size_Of_Page));
+            //return View(db.TBBoardType.ToList());
         }
 
         // GET: /BoardType/Details/5

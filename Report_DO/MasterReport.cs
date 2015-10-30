@@ -147,18 +147,17 @@ namespace Report_DO
     public class DataComGBLinkCap
     {
         [Key]
+        public int Id { get; set; }
         public string BSCName { get; set; }
         public decimal GBLinkCapacity { get; set; }
+
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString =
-           "{0:yyyy-MM-dd}",
-            ApplyFormatInEditMode = true)]
-        public DateTime BeginDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public System.Nullable<DateTime> BeginDate { get; set; }
+        
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString =
-           "{0:yyyy-MM-dd}",
-            ApplyFormatInEditMode = true)]
-        public DateTime EndDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]    
+        public System.Nullable<DateTime> EndDate { get; set; }
     }
 
     [Table("TBTRC_GBInterface_GBValue")]
@@ -204,5 +203,17 @@ namespace Report_DO
         public string LinkName { get; set; }
         public string Config { get; set; }
         public string RSLValue { get; set; }
+    }
+
+    [Table("tbMasterReportDate")]
+    public class MasterReportDate
+    {
+        [Key]
+        public int MasterReportListID { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public System.Nullable<DateTime> ReportDate { get; set; }
+        //public DateTime ReportDate { get; set; }
+        public string RunStatus { get; set; }
     }
 }

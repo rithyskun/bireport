@@ -27,6 +27,7 @@
                                 <a href="~/Report/Index.cshtml" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Manage Reports", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("Daily Operation", "Index", "MasterReportDate")</li>
                                     <li>@Html.ActionLink("Traffic InOutbound", "Index", "TrafficInOut")</li>
                                 </ul>
                             </li>
@@ -36,10 +37,10 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Reference<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Create User", "Index", "Account/Register")</li>
-                                    @*<li>@Html.ActionLink("Manage Master Reports", "Index", "Report")</li>
+                                    <li>@Html.ActionLink("Manage Master Reports", "Index", "Report")</li>
                                     <li>@Html.ActionLink("KPI Configure", "Index", "KPI")</li>
                                     <li>@Html.ActionLink("Report Parameter Configure", "Index", "Parameters")</li>
-                                    <li>@Html.ActionLink("Report Schema Configure", "Index", "ReportSchema")</li>*@
+                                    <li>@Html.ActionLink("Report Schema Configure", "Index", "ReportSchema")</li>
                                     <li>@Html.ActionLink("System Setting", "System", "Home")</li>
                                 </ul>
                             </li>

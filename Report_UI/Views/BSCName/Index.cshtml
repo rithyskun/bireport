@@ -11,7 +11,7 @@
     @Html.ActionLink("Go back System", "System", "Home")
 
 </p>
-<table class="table">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BSCNameID)
@@ -22,20 +22,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BSCNameID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BSCName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BSCNameID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BSCNameID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BSCNameID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSCNameID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSCName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BSCNameID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BSCNameID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BSCNameID })
+            </td>
+        </tr>
+    }
 
 </table>

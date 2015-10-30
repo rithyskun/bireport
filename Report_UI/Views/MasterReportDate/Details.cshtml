@@ -1,0 +1,34 @@
+﻿@model Report_DO.MasterReportDate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MasterReportDate</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RunStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RunStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MasterReportListID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

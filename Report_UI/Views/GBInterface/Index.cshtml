@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System", "System", "Home")
 </p>
-<table class="table">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BSCName)
@@ -21,20 +21,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BSCName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GBValue)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BSCName }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BSCName }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BSCName })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSCName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GBValue)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BSCName }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BSCName }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BSCName })
+            </td>
+        </tr>
+    }
 
 </table>

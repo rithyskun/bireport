@@ -200,6 +200,7 @@
     <Compile Include="Controllers\KPIController.cs" />
     <Compile Include="Controllers\LinkBudgetController.cs" />
     <Compile Include="Controllers\LinkBudgetSDController.cs" />
+    <Compile Include="Controllers\MasterReportDateController.cs" />
     <Compile Include="Controllers\ParametersController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReportSchemaController.cs" />
@@ -345,11 +346,6 @@
     <Content Include="Views\GCellList\Details.cshtml" />
     <Content Include="Views\GCellList\Edit.cshtml" />
     <Content Include="Views\GCellList\Index.cshtml" />
-    <Content Include="Views\GBLinkCap\Create.cshtml" />
-    <Content Include="Views\GBLinkCap\Delete.cshtml" />
-    <Content Include="Views\GBLinkCap\Details.cshtml" />
-    <Content Include="Views\GBLinkCap\Edit.cshtml" />
-    <Content Include="Views\GBLinkCap\Index.cshtml" />
     <Content Include="Views\GBInterface\Create.cshtml" />
     <Content Include="Views\GBInterface\Delete.cshtml" />
     <Content Include="Views\GBInterface\Details.cshtml" />
@@ -375,6 +371,16 @@
     <Content Include="Views\LinkBudgetSD\Details.cshtml" />
     <Content Include="Views\LinkBudgetSD\Edit.cshtml" />
     <Content Include="Views\LinkBudgetSD\Index.cshtml" />
+    <Content Include="Views\GBLinkCap\Create.cshtml" />
+    <Content Include="Views\GBLinkCap\Delete.cshtml" />
+    <Content Include="Views\GBLinkCap\Details.cshtml" />
+    <Content Include="Views\GBLinkCap\Edit.cshtml" />
+    <Content Include="Views\GBLinkCap\Index.cshtml" />
+    <Content Include="Views\MasterReportDate\Create.cshtml" />
+    <Content Include="Views\MasterReportDate\Delete.cshtml" />
+    <Content Include="Views\MasterReportDate\Details.cshtml" />
+    <Content Include="Views\MasterReportDate\Edit.cshtml" />
+    <Content Include="Views\MasterReportDate\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

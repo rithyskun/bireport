@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
-
+using PagedList;
 namespace Report_UI.Controllers
 {
     public class GCellListController : Controller
@@ -16,9 +16,44 @@ namespace Report_UI.Controllers
         private ReportIdentity db = new ReportIdentity();
 
         // GET: /GCellList/
-        public ActionResult Index()
+        public ActionResult Index(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
         {
-            return View(db.TBGCellList.ToList());
+            ViewBag.CurrentSortOrder = Sorting_Order;
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "GCellName" : "";
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "GCellValue" : "";
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+            ViewBag.FilterValue = Search_Data;
+
+            var gcell = from gc in db.TBGCellList select gc;
+            if (!String.IsNullOrEmpty(Search_Data))
+            {
+                gcell = gcell.Where(gc => gc.GCellName.ToUpper().Contains(Search_Data.ToUpper())
+                    || gc.GCellValue.ToUpper().Contains(Search_Data.ToUpper()));
+            }
+
+            switch (Sorting_Order)
+            {
+                case "GCellName":
+                    gcell = gcell.OrderByDescending(gc => gc.GCellName);
+                    break;
+                case "GCellValue":
+                    gcell = gcell.OrderByDescending(gc => gc.GCellValue);
+                    break;
+                default:
+                    gcell = gcell.OrderBy(gc => gc.GCellID);
+                    break;
+            }
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(gcell.ToPagedList(No_Of_Page, Size_Of_Page));
+            //return View(db.TBGCellList.ToList());
         }
 
         // GET: /GCellList/Details/5
