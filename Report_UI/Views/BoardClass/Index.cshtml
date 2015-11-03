@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System","System","Home")
 </p>
-<table class="table">
+<table class="table table-striped table-hover table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BoardClassId)
@@ -21,20 +21,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BoardClassId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BoardClass)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BoardClassId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BoardClassId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BoardClassId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoardClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoardClass)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BoardClassId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BoardClassId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BoardClassId })
+            </td>
+        </tr>
+    }
 
 </table>

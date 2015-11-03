@@ -40,8 +40,7 @@ namespace Report_UI.DataContexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MasterReport>()
-                .HasKey(i => i.MasterReportListID);
+           
                               
                
         }

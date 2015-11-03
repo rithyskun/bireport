@@ -208,10 +208,12 @@ namespace Report_DO
     [Table("tbMasterReportDate")]
     public class MasterReportDate
     {
-        [Key]
+        
         public int MasterReportListID { get; set; }
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Key]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.Nullable<DateTime> ReportDate { get; set; }
         //public DateTime ReportDate { get; set; }
         public string RunStatus { get; set; }

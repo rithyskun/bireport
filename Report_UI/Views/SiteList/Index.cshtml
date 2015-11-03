@@ -19,13 +19,13 @@
         <input type="submit" value="Go" />
     </p>
 }
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-bordered">
     <tr>
         <th>
-            @Html.ActionLink("SiteID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })           
+            @Html.ActionLink("SiteID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
         </th>
         <th>
-            @Html.ActionLink("SiteName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })            
+            @Html.ActionLink("SiteName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
         </th>
         <th></th>
     </tr>

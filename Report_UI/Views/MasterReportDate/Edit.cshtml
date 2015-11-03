@@ -15,20 +15,13 @@
         <h4>MasterReportDate</h4>
         <hr />
         @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.MasterReportListID)
+        @Html.HiddenFor(model => model.ReportDate)
 
         <div class="form-group">
             @Html.LabelFor(model => model.MasterReportListID, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DisplayFor(model => model.MasterReportListID)
+                @Html.EditorFor(model => model.MasterReportListID)
                 @Html.ValidationMessageFor(model => model.MasterReportListID)
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReportDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReportDate)
-                @Html.ValidationMessageFor(model => model.ReportDate)
             </div>
         </div>
 

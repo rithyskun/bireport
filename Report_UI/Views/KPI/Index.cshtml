@@ -18,63 +18,63 @@
         </p>
         
     }
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>
+            @Html.ActionLink("ID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("ReportID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("KPI Name", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("KPI Description", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("KPI Type", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.ActionLink("KPI Formula", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+        </th>
+        <th>
+            @Html.Label("Action")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
         <tr>
-            <th>
-                @Html.ActionLink("ID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-            </th>
-            <th>
-                @Html.ActionLink("ReportID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })                    
-            </th>
-            <th>
-                @Html.ActionLink("KPI Name", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })          
-            </th>
-            <th>
-                @Html.ActionLink("KPI Description", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })                         
-            </th>
-            <th>
-                @Html.ActionLink("KPI Type", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })                  
-            </th>
-            <th>
-                @Html.ActionLink("KPI Formula", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })                                 
-            </th>
-            <th>
-                @Html.Label("Action")
-
-            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPICalculationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportGroupID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPIName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPINameDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPIType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPIFormula)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.KPICalculationId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.KPICalculationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.KPICalculationId })
+            </td>
         </tr>
+    }
 
-        @foreach (var item in Model)
-        {
-            
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KPICalculationId)
-                </td>                
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReportGroupID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KPIName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KPINameDesc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KPIType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KPIFormula)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.KPICalculationId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.KPICalculationId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.KPICalculationId })
-                </td>
-            </tr>
-        }
+</table>
 
-    </table>
     <br />
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
     @Html.PagedListPager(Model, Page_No => Url.Action("Index",

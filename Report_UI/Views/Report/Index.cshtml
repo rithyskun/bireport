@@ -14,43 +14,44 @@
             @Html.ActionLink("Go back System", "System", "Home")
         </p> 
         <div>            
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(item => item.MasterReportListID)
-                        </th>
-                        <th>
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(item => item.MasterReportListID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(item => item.MasterReportListName)
+                    </th>
+                    <th>Action</th>
+                </tr>
 
-                            @Html.DisplayNameFor(item => item.MasterReportListName)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
+                @foreach (var item in Model)
+                {
+                    string selectedRow = "";
+                    if (item.MasterReportListID == ViewBag.MasterReportListID)
                     {
-                        string selectedRow = "";
-                        if (item.MasterReportListID == ViewBag.MasterReportListID)
-                        {
-                            selectedRow = "selectedrow";
-                        }
-                        <tr class="@selectedRow">
-                            <td>
-
-                                @Html.DisplayFor(modelItem => item.MasterReportListID)
-                            </td>
-                            <td>
-
-                                @Html.DisplayFor(modelItem => item.MasterReportListName)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Select", "Index", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Edit", "Edit", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.MasterReportListID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.MasterReportListID })
-                            </td>
-                        </tr>
+                        selectedRow = "selectedrow";
                     }
-                </table>
+                    <tr class="@selectedRow">
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.MasterReportListID)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.MasterReportListName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Select", "Index", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Edit", "Edit", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.MasterReportListID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.MasterReportListID })
+                        </td>
+                    </tr>
+                }
+            </table>
+
+
                
         </div>
 </div>

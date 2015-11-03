@@ -11,12 +11,10 @@
 
 @using (Html.BeginForm("Operation", "Home", FormMethod.Get))
 {
-    <p>
-        @*FROM :<input id="datepicker" type="text" />        
-        TO :<input id="datepicker1" type="text" />*@
-
-        @Html.EditorFor(m => m.StartDate, new { @class = "form-control" })
-        @Html.EditorFor(m => m.EndDate, new { @class = "form-control" })
+    <p>        
+       
+       StartDate @Html.EditorFor(m => m.StartDate, new { @class = "form-control" })
+       &nbsp;&nbsp;&nbsp; EndDate @Html.EditorFor(m => m.EndDate, new { @class = "form-control" })
         <input type="submit" value="Go" />
     </p>
 }

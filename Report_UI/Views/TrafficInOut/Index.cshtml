@@ -15,16 +15,16 @@
     </p>
 }
 
-<table class="table">
-    <tr>  
+<table class="table table-striped table-hover table-bordered">
+    <tr>
         <th>
-           @Html.Label("ResultTime")
-        </th>      
+            @Html.Label("ResultTime")
+        </th>
         <th>
             @Html.Label("HourOfDay")
         </th>
         <th>
-           @Html.Label("GranularityPeriod")
+            @Html.Label("GranularityPeriod")
         </th>
         <th>
             @Html.Label("NEName")
@@ -33,51 +33,52 @@
             @Html.Label("BSCName")
         </th>
         <th>
-           @Html.Label("OfficeDir")
+            @Html.Label("OfficeDir")
         </th>
         <th>
             @Html.Label("Answer_Traffic_Incoming")
         </th>
         <th>
-           @Html.Label("Answer_Traffic_Outgoing")
+            @Html.Label("Answer_Traffic_Outgoing")
         </th>
         <th>
             @Html.Label("Total_Traffic_BSC")
         </th>
-        <th></th>
+       
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResultTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HourOfDay)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GranularityPeriod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NEName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BSCName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OfficeDir)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Answer_Traffic_Incoming)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Answer_Traffic_Outgoing)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total_Traffic_BSC)
-        </td>       
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResultTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourOfDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GranularityPeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NEName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSCName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeDir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_Traffic_Incoming)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_Traffic_Outgoing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Traffic_BSC)
+            </td>
+        </tr>
+    }
 </table>
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
     @Html.PagedListPager(Model, Page_No => Url.Action("Index",

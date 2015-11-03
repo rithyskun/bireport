@@ -27,7 +27,7 @@
                                 <a href="~/Report/Index.cshtml" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li>@Html.ActionLink("Manage Reports", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Daily Operation", "Index", "MasterReportDate")</li>
+                                    <li>@Html.ActionLink("Automation Workflow", "Index", "MasterReportDate")</li>
                                     <li>@Html.ActionLink("Traffic InOutbound", "Index", "TrafficInOut")</li>
                                 </ul>
                             </li>
@@ -55,7 +55,7 @@
                 <footer>
                     <div>
                         &copy; @DateTime.Now.Year - CCPL Global LTD. All Rights Reserved.
-                        <p class="mMdDyY pull-right">
+                        <p class="hidden-xs pull-right">
                             @DateTime.Now.DayOfWeek, @DateTime.Now.ToString("MMMM") @DateTime.Now.Day,
                             @DateTime.Now.Year
                         </p>
@@ -65,39 +65,7 @@
        
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
-            @Scripts.Render("~/bundles/jqueryui")
-
-            <script>
-                $(function () {
-                    $("#datepicker").datepicker({
-                        dateFormat: "yy-mm-dd",
-                        changeYear: true,
-                        showOn: "button",
-                        buttonImageOnly: true,
-                        buttonImage: "/Content/cal/calendar.gif",
-                    }).css("display", "inline-block")
-                        .next("button").button({
-                            icons: { primary: "ui-icon-calendar" },
-                            buttonText: "Select a date",
-                            text: false
-                        });
-                });
-
-                $(function () {
-                    $("#datepicker1").datepicker({
-                        dateFormat: "yy-mm-dd",
-                        changeYear: true,
-                        showOn: "button",
-                        buttonImageOnly: true,
-                        buttonImage: "/Content/cal/calendar.gif",
-                    }).css("display", "inline-block")
-                        .next("button").button({
-                            icons: { primary: "ui-icon-calendar" },
-                            buttonText: "Select a date",
-                            text: false
-                        });
-                });
-            </script>        
+            @Scripts.Render("~/bundles/jqueryui")                 
          
             @RenderSection("scripts", required: false)
         </body>

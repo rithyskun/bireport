@@ -8,21 +8,58 @@ using System.Web;
 using System.Web.Mvc;
 using Report_DO;
 using Report_UI.DataContexts;
+using PagedList;
 
 namespace Report_UI.Controllers
 {
     public class MasterReportDateController : Controller
     {
         private ReportIdentity db = new ReportIdentity();
-        
+
         // GET: /MasterReportDate/
-        public ActionResult Index()
+        public ActionResult Index(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
         {
-            return View(db.tbMasterReportDate.ToList());
+            ViewBag.CurrentSortOrder = Sorting_Order;
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "ReportID" : "";
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "RunStatus" : "";
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+            ViewBag.FilterValue = Search_Data;
+
+            var reportdate = from rdate in db.tbMasterReportDate select rdate;
+            if (!String.IsNullOrEmpty(Search_Data))
+            {
+
+                reportdate = reportdate.Where(rdate => rdate.RunStatus.ToUpper().Contains(Search_Data.ToUpper()));
+                //|| rdate.RunStatus.ToUpper().Contains(Search_Data.ToUpper()));
+
+            }
+
+            switch (Sorting_Order)
+            {
+                case "ReportID":
+                    reportdate = reportdate.OrderByDescending(rdate => rdate.ReportDate);
+                    break;
+                case "RunStatus":
+                    reportdate = reportdate.OrderByDescending(rdate => rdate.RunStatus);
+                    break;
+                default:
+                    reportdate = reportdate.OrderBy(rdate => rdate.ReportDate);
+                    break;
+            }
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(reportdate.ToPagedList(No_Of_Page, Size_Of_Page));
         }
 
         // GET: /MasterReportDate/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -47,7 +84,7 @@ namespace Report_UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="MasterReportListID,ReportDate,RunStatus")] MasterReportDate masterreportdate)
+        public ActionResult Create([Bind(Include="ReportDate,MasterReportListID,RunStatus")] MasterReportDate masterreportdate)
         {
             if (ModelState.IsValid)
             {
@@ -59,16 +96,14 @@ namespace Report_UI.Controllers
             return View(masterreportdate);
         }
 
-        
         // GET: /MasterReportDate/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
-            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }        
-            
+            }
+            //MasterReportDate masterreportdate = db.tbMasterReportDate.FirstOrDefault(c => c.MasterReportListID == id);
             MasterReportDate masterreportdate = db.tbMasterReportDate.Find(id);
             if (masterreportdate == null)
             {
@@ -82,7 +117,7 @@ namespace Report_UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="MasterReportListID,ReportDate,RunStatus")] MasterReportDate masterreportdate)
+        public ActionResult Edit([Bind(Include="ReportDate,MasterReportListID,RunStatus")] MasterReportDate masterreportdate)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +129,7 @@ namespace Report_UI.Controllers
         }
 
         // GET: /MasterReportDate/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -111,7 +146,7 @@ namespace Report_UI.Controllers
         // POST: /MasterReportDate/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             MasterReportDate masterreportdate = db.tbMasterReportDate.Find(id);
             db.tbMasterReportDate.Remove(masterreportdate);
