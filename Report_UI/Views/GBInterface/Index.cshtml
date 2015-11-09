@@ -10,7 +10,7 @@
     @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System", "System", "Home")
 </p>
-<table class="table table-striped table-hover table-bordered">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BSCName)
@@ -18,7 +18,7 @@
         <th>
             @Html.DisplayNameFor(model => model.GBValue)
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)

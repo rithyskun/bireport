@@ -53,11 +53,14 @@ namespace Report_UI.Controllers
                     linkbudgetsd = linkbudgetsd.OrderBy(linkb => linkb.LinkBudgetID);
                     break;
             }
-            int Size_Of_Page = 10;
+           
+            int Size_Of_Page = 10 ;
             int No_Of_Page = (Page_No ?? 1);
             return View(linkbudgetsd.ToPagedList(No_Of_Page, Size_Of_Page));
             //return View(db.TBTXNLinkBudgetSD.ToList());
         }
+
+
 
         // GET: /LinkBudgetSD/Details/5
         public ActionResult Details(int? id)

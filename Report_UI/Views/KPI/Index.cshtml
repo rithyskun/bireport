@@ -18,7 +18,7 @@
         </p>
         
     }
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.ActionLink("ID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
@@ -39,7 +39,7 @@
             @Html.ActionLink("KPI Formula", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
         </th>
         <th>
-            @Html.Label("Action")
+            Action
         </th>
     </tr>
 

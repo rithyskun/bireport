@@ -20,7 +20,7 @@
         <input type="submit" value="Go" />
     </p>
 }
-<table class="table table-striped table-hover table-bordered">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.ActionLink("BSCNameID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
@@ -42,7 +42,7 @@
             @Html.ActionLink("LogicalFunctionType", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
 
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)

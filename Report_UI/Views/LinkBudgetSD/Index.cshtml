@@ -3,7 +3,8 @@
 @model PagedList.IPagedList<Report_DO.TXNLinkBudgetSD>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index";    
+   
 }
 
 <h2>Index</h2>
@@ -19,7 +20,7 @@
         <input type="submit" value="Go" />
     </p>
 }
-<table class="table table-striped table-hover table-bordered">
+<table class="table table-striped table-hover">
     <tr>
         <th>
             @Html.ActionLink("HopName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
@@ -36,7 +37,7 @@
         <th>
             @Html.ActionLink("RSLValue", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)
@@ -63,6 +64,9 @@
     }
 
 </table>
+
+
+
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, Page_No => Url.Action("Index",
 new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))

@@ -5,77 +5,76 @@
 
 <h2>Manage Reference</h2>
 
-<div class="row">
-    <div class="col-md-4">
-        <h3>Data Planning</h3>
-        <div class="well">
-            <h5>1. BSS Report</h5>
-            <ul>                
-                <li>@Html.ActionLink("Board Type", "Index", "BoardType")</li>
-                <li>@Html.ActionLink("BSC Name", "Index", "BSCName")</li>
-                <li>@Html.ActionLink("GCell List", "Index", "GCellList")</li>
-            </ul>
-            <h5>2. PS Report</h5>
-            <ul>
-                <li>@Html.ActionLink("License", "System", "Home")</li>                
-            </ul>
-            <h5>3. DataCom Report</h5>
-            <ul>
-                <li>@Html.ActionLink("GBLinkCapacityTransmission", "Index", "GBLinkCap")</li>                
-            </ul>
-            <h5>4. TRC Report</h5>
-            <ul>
-                <li>@Html.ActionLink("GB Interface Value", "Index", "GBInterface")</li>                
-            </ul>
-            <h5>5. TXN Report</h5>
-            <ul>
-                <li>@Html.ActionLink("FM Engineer", "Index", "FMEngineer")</li>
-                <li>@Html.ActionLink("Site List", "Index", "SiteList")</li>
-                <li>@Html.ActionLink("LinkBudget", "Index", "LinkBudget")</li>
-                <li>@Html.ActionLink("LinkBudget SD", "Index", "LinkBudgetSD")</li>
-            </ul>
-        </div>            
-    </div>
-    <div class="col-md-4">
-        <div class="row">
-        <h3>Report Configure</h3>
-        <div class="well">
-            <h5>Manage Reports</h5>
-            <ul>
-                <li>@Html.ActionLink("Report Master", "Index", "Report")</li>
-                <li>@Html.ActionLink("Report KPI", "Index", "KPI")</li>
-                <li>@Html.ActionLink("Report Parameter", "Index", "Parameters")</li>
-                <li>@Html.ActionLink("Report Schema", "Index", "ReportSchema")</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-            <h3>Other</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Data Planning</h3>
             <div class="well">
-                <h5>System</h5>
+                <h5>1. BSS Report</h5>
                 <ul>
-                    <li>@Html.ActionLink("Mail Service", "Index", "BoardType")</li>
-                    <li>@Html.ActionLink("Logs Configure", "Index", "BoardType")</li>
-                    <li>@Html.ActionLink("Database Backup", "Index", "BoardType")</li>
+                    <li>@Html.ActionLink("Board Type", "Index", "BoardType")</li>
+                    <li>@Html.ActionLink("BSC Name", "Index", "BSCName")</li>
+                    <li>@Html.ActionLink("GCell List", "Index", "GCellList")</li>
+                </ul>
+                <h5>2. PS Report</h5>
+                <ul>
+                    <li>@Html.ActionLink("License", "System", "Home")</li>
+                </ul>
+                <h5>3. DataCom Report</h5>
+                <ul>
+                    <li>@Html.ActionLink("GBLinkCapacityTransmission", "Index", "GBLinkCap")</li>
+                </ul>
+                <h5>4. TRC Report</h5>
+                <ul>
+                    <li>@Html.ActionLink("GB Interface Value", "Index", "GBInterface")</li>
+                </ul>
+                <h5>5. TXN Report</h5>
+                <ul>
+                    <li>@Html.ActionLink("FM Engineer", "Index", "FMEngineer")</li>
+                    <li>@Html.ActionLink("Site List", "Index", "SiteList")</li>
+                    <li>@Html.ActionLink("LinkBudget", "Index", "LinkBudget")</li>
+                    <li>@Html.ActionLink("LinkBudget SD", "Index", "LinkBudgetSD")</li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <h3>Report Threshold</h3>
-        <div class="well">
-            <h5>Manage Thresholds</h5>
-            <ul>
-                <li>@Html.ActionLink("BSS Threshold", "Index", "BoardType")</li>
-                <li>@Html.ActionLink("GPRS Threshold", "Index", "BSCName")</li>
-                <li>@Html.ActionLink("TRC Threshold", "Index", "GCellList")</li>
-                <li>@Html.ActionLink("TXN Threshold", "Index", "GCellList")</li>
-            </ul>
-            
+        <div class="col-md-4">
+            <div class="row">
+                <h3>Report Configure</h3>
+                <div class="well">
+                    <h5>Manage Reports</h5>
+                    <ul>
+                        <li>@Html.ActionLink("Report Master", "Index", "Report")</li>
+                        <li>@Html.ActionLink("Report KPI", "Index", "KPI")</li>
+                        <li>@Html.ActionLink("Report Parameter", "Index", "Parameters")</li>
+                        <li>@Html.ActionLink("Report Schema", "Index", "ReportSchema")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Other</h3>
+                <div class="well">
+                    <h5>System</h5>
+                    <ul>
+                        <li>@Html.ActionLink("Mail Service", "Index", "BoardType")</li>
+                        <li>@Html.ActionLink("Logs Configure", "Index", "BoardType")</li>
+                        <li>@Html.ActionLink("Database Backup", "Index", "BoardType")</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>        
-</div>
+        <div class="col-md-4">
+            <h3>Report Threshold</h3>
+            <div class="well">
+                <h5>Manage Thresholds</h5>
+                <ul>
+                    <li>@Html.ActionLink("BSS Threshold", "Index", "BoardType")</li>
+                    <li>@Html.ActionLink("GPRS Threshold", "Index", "BSCName")</li>
+                    <li>@Html.ActionLink("TRC Threshold", "Index", "GCellList")</li>
+                    <li>@Html.ActionLink("TXN Threshold", "Index", "GCellList")</li>
+                </ul>
 
+            </div>
+        </div>
+    </div>
 
 @section scripts
 {

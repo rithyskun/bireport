@@ -15,6 +15,7 @@ namespace Report_UI.DataContexts
             : base("PMSReports")
         {
             Database.SetInitializer<ReportIdentity>(null);
+            Configuration.LazyLoadingEnabled = false;
             Database.Log = sql => Debug.Write(sql);
         }
         
