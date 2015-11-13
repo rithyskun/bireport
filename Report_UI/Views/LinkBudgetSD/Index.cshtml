@@ -1,4 +1,5 @@
 ﻿@*@model IEnumerable<Report_DO.TXNLinkBudgetSD>*@
+@using Report_UI.WebUI.HtmlHelpers
 
 @model PagedList.IPagedList<Report_DO.TXNLinkBudgetSD>
 @using PagedList.Mvc;
@@ -56,9 +57,12 @@
                 @Html.DisplayFor(modelItem => item.RSLValue)
             </td>
             <td>
+                
                 @Html.ActionLink("Edit", "Edit", new { id = item.LinkBudgetID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.LinkBudgetID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.LinkBudgetID })
+                
+                
             </td>
         </tr>
     }

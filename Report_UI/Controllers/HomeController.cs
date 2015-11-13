@@ -20,6 +20,7 @@ namespace Report_UI.Controllers
     public class HomeController : Controller
     {
         private ReportIdentity db = new ReportIdentity();
+        private DbConnectivity dbcom = new DbConnectivity();
         public ActionResult Index()
         {
 
@@ -27,8 +28,8 @@ namespace Report_UI.Controllers
         }
 
         public ActionResult Operation()
-        {           
-
+        {
+            
           return View();        
         }
 

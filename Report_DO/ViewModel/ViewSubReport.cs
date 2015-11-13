@@ -13,3 +13,4 @@ namespace Report_DO.ViewModel
         public IEnumerable<MasterReport> MasterReports { get; set; }
     }
 }
+
