@@ -9,3 +9,4 @@ C:\Users\Rithy SKUN\Documents\Visual Studio 2013\Projects\BIReport\Report_DO\obj
 C:\Users\Rithy SKUN\Documents\Visual Studio 2013\Projects\BIReport\Report_DO\obj\Debug\Report_DO.pdb
 C:\Users\Rithy SKUN\Documents\Visual Studio 2013\Projects\BIReport\Report_DO\bin\Debug\EntityFramework.dll
 C:\Users\Rithy SKUN\Documents\Visual Studio 2013\Projects\BIReport\Report_DO\bin\Debug\EntityFramework.xml
+C:\Users\Rithy SKUN\Documents\Visual Studio 2013\Projects\BIReport\Report_DO\bin\Debug\Report_DO.dll.config

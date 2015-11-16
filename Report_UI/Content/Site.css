@@ -1,12 +1,13 @@
 ﻿body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
+    padding-top: 00px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 30px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -44,7 +45,7 @@ input[type="checkbox"].input-validation-error {
 
 body {
   font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
@@ -66,7 +67,7 @@ body {
     color: #e80c4d;
     font-size: 1.1em;
     font-weight: bold;
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 
 .message-success {
@@ -85,4 +86,16 @@ body {
 .nav-list{padding-right:15px;padding-left:15px;margin-bottom:0;}
 .nav-list-main{padding-left:0px;padding-right:0px;margin-bottom:0;}
 span.nav-toggle-icon{font-size:7px !important;top:-2px !important;color:#888 !important;}
+
+
+.topLogo {
+    top: 0px;
+    border-width: 0 0 1px;
+    
+}
+
+.navbar-fixed-top {
+  top: 0px;
+  border-width: 0 0 1px;
+}
 
