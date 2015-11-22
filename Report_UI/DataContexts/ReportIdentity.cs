@@ -40,8 +40,7 @@ namespace Report_UI.DataContexts
         public DbSet<MasterReportDate> tbMasterReportDate { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-           
+        {          
                               
                
         }

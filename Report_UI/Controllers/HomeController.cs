@@ -11,7 +11,7 @@ using Report_UI.DataContexts;
 using Report_DO;
 using System.Data.SqlClient;
 using System.Web.Services.Description;
-
+using System.Configuration;
 
 
 namespace Report_UI.Controllers
@@ -27,10 +27,13 @@ namespace Report_UI.Controllers
             return View(db.TBMasterReportList.ToList());
         }
 
-        public ActionResult Operation()
+        
+        public ActionResult Operation(System.Nullable<DateTime> StartDate, System.Nullable<DateTime> EndDate)
         {
+            DataTable dt= new DataTable();
+            OperationView opt = new OperationView();
             
-          return View();        
+          return View(opt);        
         }
 
         public ActionResult System()
@@ -54,7 +57,7 @@ namespace Report_UI.Controllers
         }        
         public ActionResult Dashboard()
         {
-        
+            
             ViewBag.Message = "Your dashboard page";           
 
             return View();

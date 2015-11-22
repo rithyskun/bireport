@@ -19,35 +19,37 @@
         <input type="submit" value="Go" />
     </p>
 }
-<table class="table table-striped table-hover table-bordered">
-    <tr>
-        <th>
-            @Html.ActionLink("SiteID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>
-            @Html.ActionLink("SiteName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>Action</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="container-body">
+    <table class="table table-striped table-hover table-bordered">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SiteID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SiteName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SiteID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SiteID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SiteID })
-            </td>
+            <th>
+                @Html.ActionLink("SiteID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>
+                @Html.ActionLink("SiteName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>Action</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SiteID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SiteName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SiteID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SiteID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SiteID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, Page_No => Url.Action("Index",
 new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))

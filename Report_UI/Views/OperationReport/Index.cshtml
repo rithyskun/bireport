@@ -16,238 +16,240 @@
     
 }
 
+<div class="container-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>KPIName</th>
+                <th>ResultTime</th>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>KPIName</th>
-            <th>ResultTime</th>
+            </tr>
+        </thead>
+        <tbody>
 
-        </tr>
-    </thead>
-    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.CSSR)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.TCHCongestion)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.SDCCHCongestion)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.SDCDR)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.HOSR)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.CDR)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Traffic_24H)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Traffic_BH)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.TotalGPRS_EDGE_Traffic)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.NSSVoice_Traffic_24H)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.NSSVoice_Traffic_BH)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.PagingSuccess_Rate)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.AssignmentSuccess_Rate)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.SMS_MOSuccess_Rate)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.SMS_MTSuccess_Rate)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.BHCA_Utilization)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.CSR)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.VLRSub)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.HLRSub)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.VLRInt_RoamingSub)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Total_Traffic_GGSN)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MWLinkRSL)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MWLinkRSL_Low)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MWLinkES)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MWLinkSES)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.MWLinkUAS)
+                </td>
+            </tr>
+        </tbody>
 
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CSSR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.TCHCongestion)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SDCCHCongestion)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SDCDR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.HOSR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CDR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Traffic_24H)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Traffic_BH)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.TotalGPRS_EDGE_Traffic)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.NSSVoice_Traffic_24H)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.NSSVoice_Traffic_BH)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.PagingSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.AssignmentSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SMS_MOSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SMS_MTSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.BHCA_Utilization)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CSR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.VLRSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.HLRSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.VLRInt_RoamingSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Total_Traffic_GGSN)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkRSL)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkRSL_Low)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkES)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkSES)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkUAS)
-            </td>
-        </tr>
-    </tbody>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResultTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CSSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TCHCongestion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDCCHCongestion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDCDR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HOSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CDR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traffic_24H)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traffic_BH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalGPRS_EDGE_Traffic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_24H)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_BH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PagingSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssignmentSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SMS_MOSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SMS_MTSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BHCA_Utilization)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VLRSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HLRSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VLRInt_RoamingSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total_Traffic_GGSN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkRSL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkRSL_Low)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkSES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkUAS)
-            </td>
-        </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResultTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSSR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCHCongestion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDCCHCongestion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDCDR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HOSR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CDR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Traffic_24H)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Traffic_BH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalGPRS_EDGE_Traffic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_24H)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_BH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PagingSuccess_Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignmentSuccess_Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SMS_MOSuccess_Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SMS_MTSuccess_Rate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BHCA_Utilization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VLRSub)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HLRSub)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VLRInt_RoamingSub)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_Traffic_GGSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MWLinkRSL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MWLinkRSL_Low)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MWLinkES)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MWLinkSES)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MWLinkUAS)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

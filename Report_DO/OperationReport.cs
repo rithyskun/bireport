@@ -25,6 +25,6 @@ namespace Report_DO
             ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }        
 
-        public IEnumerable<dataList> datalist { get; set; }
+        
     }
 }

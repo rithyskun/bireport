@@ -19,47 +19,49 @@
         <input type="submit" value="Go" />
     </p>
 }
-<table class="table table-striped table-hover">
-    <tr>
-        <th>
-            @Html.ActionLink("BSCNameID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>
-            @Html.ActionLink("GCellName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>
-            @Html.ActionLink("GCellValue", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>
-            @Html.ActionLink("Province", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
-        </th>
-        <th>Action</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="container-body">
+    <table class="table table-striped table-hover">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BSCNameID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GCellName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GCellValue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Province)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.GCellID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.GCellID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.GCellID })
-            </td>
+            <th>
+                @Html.ActionLink("BSCNameID", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>
+                @Html.ActionLink("GCellName", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>
+                @Html.ActionLink("GCellValue", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>
+                @Html.ActionLink("Province", "Index", new { Sorting_Order = ViewBag.SortingName, Filter_Value = ViewBag.FilterValue })
+            </th>
+            <th>Action</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BSCNameID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GCellName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GCellValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Province)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GCellID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.GCellID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GCellID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, Page_No => Url.Action("Index",
 new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))

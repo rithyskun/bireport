@@ -10,38 +10,40 @@
     @Html.ActionLink("Create New", "Create")&nbsp;&nbsp;&nbsp;&nbsp;
     @Html.ActionLink("Go back System", "System", "Home")
 </p>
-<table class="table table-striped table-hover">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MasterReportId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PKeyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PkeyValue)
-        </th>
-        <th>Action</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="container-body">
+    <table class="table table-striped table-hover">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MasterReportId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PKeyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PkeyValue)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterReportId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PKeyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkeyValue)
+            </th>
+            <th>Action</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasterReportId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PKeyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkeyValue)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -58,10 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataList.cs" />
-    <Compile Include="DbConnectivity.cs" />
+    <Compile Include="DBConnector.cs" />
     <Compile Include="MasterReport.cs" />
-    <Compile Include="OperateDO.cs" />
     <Compile Include="OperationReport.cs" />
+    <Compile Include="OperationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -103,8 +103,8 @@ namespace Report_UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
-            
+            //MasterReportDate masterreportdate = db.tbMasterReportDate.Find(id);
+
             MasterReportDate masterreportdate = db.tbMasterReportDate.Find(id);
             if (masterreportdate == null)
             {

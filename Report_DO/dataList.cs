@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Report_DO
 {
-   public class dataList: DbConnectivity
+   public class dataList
     {
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }

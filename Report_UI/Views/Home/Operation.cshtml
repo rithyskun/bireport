@@ -1,257 +1,57 @@
-﻿@model Report_DO.dataList
-
+﻿@model Report_DO.OperationView
 @{
     ViewBag.Title = "Operation";
-    DateTime dt = new DateTime();
-    dt = DateTime.Now;
-    string.Format("{0: dd MM yyyy}", dt);
-    
 }
-<h2>Operation Report</h2>
 
-@using (Html.BeginForm("Operation", "Home", FormMethod.Get))
+<h2>Operation</h2>
+
+@using (Html.BeginForm())
 {
-    <p>        
-       
-       StartDate @Html.EditorFor(m => m.StartDate, new { @class = "form-control" })
-       &nbsp;&nbsp;&nbsp; EndDate @Html.EditorFor(m => m.EndDate, new { @class = "form-control" })
+   
+    <p>
+        <input id="StartDate" type="text" />
+        <input id="EndDate" type="text" />
         <input type="submit" value="Go" />
     </p>
+    
 }
-<table class="table">
-    <thead>
-        <tr>           
-            <th>KPIName</th>
-            <th>@dt</th>
-            <th>@dt</th>
-            <th>@dt</th>
-            <th>@dt</th>
-                      
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CSSR)                               
-                @*@Html.Label("CSSR")*@
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.TCHCongestion)               
-                @*@Html.Label("TCHCongestion")*@
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.TCHCongestion)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SDCCHCongestion)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SDCDR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.HOSR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CDR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Traffic_24H)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Traffic_BH)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.TotalGPRS_EDGE_Traffic)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.NSSVoice_Traffic_24H)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.NSSVoice_Traffic_BH)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.PagingSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.AssignmentSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SMS_MOSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.SMS_MTSuccess_Rate)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.BHCA_Utilization)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.CSR)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.VLRSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.HLRSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.VLRInt_RoamingSub)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.Total_Traffic_GGSN)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkRSL)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkRSL_Low)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkES)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkSES)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.DisplayNameFor(model => model.MWLinkUAS)
-            </td>
-        </tr>
-    </tbody>
 
-    @*@foreach (var item in Model) {
-        <tr>            
+<div class="container-body">
+    <table class="table">
+        <tr>
+            <th>
+                KPI Name
+            </th>
+            <th>
+                @DateTime.Now.Date
+            </th>
+        </tr>
+        <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ResultTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CSSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TCHCongestion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDCCHCongestion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDCDR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HOSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CDR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traffic_24H)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traffic_BH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalGPRS_EDGE_Traffic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_24H)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NSSVoice_Traffic_BH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PagingSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssignmentSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SMS_MOSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SMS_MTSuccess_Rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BHCA_Utilization)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CSR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VLRSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HLRSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VLRInt_RoamingSub)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total_Traffic_GGSN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkRSL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkRSL_Low)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkSES)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MWLinkUAS)
+                CSSR
             </td>
         </tr>
-    }*@
-</table>
+        <tr>
+            <td>
+                TCHCongestion
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SDCCHCongestion
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SDCDR
+            </td>
+        </tr>
+        <tr>
+            <td>
+                HOSR
+            </td>
+        </tr>
+
+
+    </table>
+</div>
