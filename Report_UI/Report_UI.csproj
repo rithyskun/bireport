@@ -261,6 +261,8 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\w2ui-1.4.3.css" />
+    <Content Include="Content\w2ui-1.4.3.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -280,6 +282,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\w2ui-1.4.3.js" />
+    <Content Include="Scripts\w2ui-1.4.3.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -386,6 +390,7 @@
     <Content Include="Views\MasterReportDate\Details.cshtml" />
     <Content Include="Views\MasterReportDate\Edit.cshtml" />
     <Content Include="Views\MasterReportDate\Index.cshtml" />
+    <Content Include="Views\Home\UI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

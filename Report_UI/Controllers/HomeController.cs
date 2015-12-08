@@ -63,5 +63,10 @@ namespace Report_UI.Controllers
             return View();
         }
         
+        public ActionResult UI()
+        {
+
+            return View();
+        }
     }
 }
