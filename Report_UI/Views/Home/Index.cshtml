@@ -6,102 +6,35 @@
     
  }
 
-    <div class="container">
+ <div class="container">
         <div class="row"><h2>Performance Management Report</h2></div>
+ </div>
+
+<div id="layout" style="width: 100%; height: 400px;">
+    <div id="layout" style="width: 100%;height:400px;">
+
     </div>
 
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-4">
-                <div class="well">
-                    <table>
-                        <tr>
-                            <th>
-                                Report Name
-                            </th>
-                        </tr>
-                        @foreach (var item in Model)
-                        {
-                                                        
-                            string selectedRow = "";
-                            if (item.MasterReportListID == ViewBag.MasterReportListID)
-                            {
-                                selectedRow = "success";
-                            }
-                            <tr class="@selectedRow">
-                                <td>                                    
-                                    <a href="#">@Html.DisplayFor(modelItem => item.MasterReportListName)</a>
-                                </td>                                
-                            </tr>
-                        }
-                    </table>
-                    @*<div>
-            <ul class="nav nav-list">
-                     <li>
-                         <label class="tree-toggle nav-header">Report Name</label>
-                         @using (Html.BeginForm("Index", "MasterReport", FormMethod.Get))
-                         {
-                             <p>
-                                 @Html.TextBox("SearchName")
-                                 <input type="submit" value="Go" />
-                             </p>
-                         <ul class="nav-list tree">
-
-                            @foreach (var item in Model){
-                              <li>
-                                   @Html.DisplayFor(modelItem => item.MasterReportListName)
-                              </li>}
-                         </ul>
-                         }
-                     </li>
-                 </ul>
-             </div>*@
-
-                </div>
-
-            </div>
-            <div class="col-md-8">
-                <div class="well">
-                    <label class="tree-toggle nav-header">Paramater</label>
-                    <ul class="nav nav-list tree">
-                        <li>
-                            <input class="form-control" id="focusedInput" value="Start Date" type="text">
-                            <input class="form-control" id="focusedInput" value="End Date" type="text">
-                            <input class="btn btn-default" id="Run" type="submit" value="Run" />
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        Panel content
-                    </div>
-                    <div class="panel-footer">Panel footer</div>
-                </div>
-                <div class="well well-sm">
-                    Look, I'm in a small well!
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 @section scripts
 {
-        <script type="text/javascript">
-            $('.tree-toggle').click(function () {
-                $(this).parent().children('ul.tree').toggle(200);
-            });
-            $(function () {
-                $('.tree-toggle').parent().children('ul.tree').toggle(200);
-            })
+  <script type="text/javascript">
+      $(function () {
+          var pstyle = 'border: 1px solid #dfdfdf; padding: 5px;';
+          $('#layout').w2layout({
+              name: 'layout',
+              padding: 4,
+              panels: [                  
+                  { type: 'left', size: 200, resizable: true, style: pstyle },
+                  { type: 'main', style: pstyle }                  
+              ]
+              
+          });
+      });
 
-        </script>
-    
+     
+  </script>    
 }
 
 
